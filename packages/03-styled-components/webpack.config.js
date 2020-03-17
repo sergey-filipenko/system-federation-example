@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: "./src/index",
@@ -13,7 +13,8 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:3003/"
+    publicPath: "http://localhost:3003/",
+    libraryTarget: "system"
   },
 
   resolve: {
@@ -42,8 +43,8 @@ module.exports = {
       },
       shared: ["react", "react-dom"]
     }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html"
-    })
+    new CopyPlugin([
+      { from: 'public', to: '.' }
+    ])
   ]
 };

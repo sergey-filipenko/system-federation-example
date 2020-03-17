@@ -1,6 +1,8 @@
 import React from "react";
 
-const Dialog = React.lazy(() => import("app_two/Dialog"));
+const Dialog = React.lazy(() => {
+    return Promise.all([System.import("app_two"), System.import('app_two/main.js')])
+});
 
 const Page1 = () => {
     return (

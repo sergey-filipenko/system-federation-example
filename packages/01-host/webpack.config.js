@@ -1,5 +1,5 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: "./src/index",
@@ -13,7 +13,8 @@ module.exports = {
   },
 
   output: {
-    publicPath: "http://localhost:3001/"
+    publicPath: "http://localhost:3001/",
+    libraryTarget: "system"
   },
 
   resolve: {
@@ -28,8 +29,13 @@ module.exports = {
         options: {
           presets: [require.resolve("@babel/preset-react")]
         }
+      },
+      {
+        parser: {
+          system: false
+        }
       }
-    ]
+    ],
   },
 
   plugins: [
@@ -46,8 +52,8 @@ module.exports = {
       },
       shared: ["react", "react-dom","react-router-dom"]
     }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html"
-    })
+    new CopyPlugin([
+      { from: 'public', to: '.' }
+    ])
   ]
 };
