@@ -36,7 +36,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app_three",
-      library: { type: "var", name: "app_three" },
+      library: { type: "system", name: "app_three" },
       filename: "remoteEntry.js",
       exposes: {
         Button: "./src/Button"

@@ -1,8 +1,6 @@
 import React from "react";
 
-const Dialog = React.lazy(() => {
-    return import('app_two/Dialog')
-});
+const Dialog = React.lazy(() => import('app_two/Dialog'))
 
 const Page1 = () => {
     return (
