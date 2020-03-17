@@ -41,7 +41,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app_one",
-      library: { type: "system", name: "app_one" },
+      library: { type: "system" },
       filename: "remoteEntry.js",
       remotes: {
         app_two: "app_two",

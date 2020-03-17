@@ -36,7 +36,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app_two",
-      library: { type: "system", name: "app_two" },
+      library: { type: "system" },
       filename: "remoteEntry.js",
       exposes: {
         Dialog: "./src/Dialog"
