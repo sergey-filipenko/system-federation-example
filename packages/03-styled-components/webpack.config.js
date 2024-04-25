@@ -39,7 +39,7 @@ module.exports = {
       library: { type: "system" },
       filename: "remoteEntry.js",
       exposes: {
-        Button: "./src/Button"
+        './Button': "./src/Button"
       },
       shared: ["react", "react-dom"]
     }),

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<!--
     <script type="systemjs-importmap">
       {
         "imports": {
@@ -13,12 +14,12 @@
         }
       }
     </script>
+-->
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://unpkg.com/systemjs/dist/system.js"></script>
-    <script>
-      System.import('app_one/main.js')
-    </script>
+    <script src="http://localhost:3001/system.js"></script>
+
+    <script data-main="scripts/main" src="http://localhost:3001/app.js"></script>
   </body>
 </html>

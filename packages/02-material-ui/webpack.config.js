@@ -39,7 +39,7 @@ module.exports = {
       library: { type: "system" },
       filename: "remoteEntry.js",
       exposes: {
-        Dialog: "./src/Dialog"
+        './Dialog': "./src/Dialog"
       },
       remotes: {
         app_one: "app_one",

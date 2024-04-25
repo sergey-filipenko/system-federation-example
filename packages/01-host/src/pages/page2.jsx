@@ -1,6 +1,9 @@
 import React from "react";
 
-const Button = React.lazy(() => import("app_three/Button"));
+const Button = React.lazy(() => {
+    console.log('app_three/Button');
+    return import("app_three/Button")
+});
 
 const Page2 = () => (
   <div>
