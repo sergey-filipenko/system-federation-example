@@ -45,10 +45,11 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         app_two: "app_two",
-        app_three: "app_three"
+        app_three: "app_three",
+        app_four: "app_four",
       },
       exposes: {
-        'AppContainer':'./src/App'
+        './AppContainer':'./src/App'
       },
       shared: ["react", "react-dom","react-router-dom"]
     }),
